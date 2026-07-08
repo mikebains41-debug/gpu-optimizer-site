@@ -7,9 +7,13 @@
 <style>
 body { background:#0a0a0f; color:#e8e8e8; font-family: -apple-system, sans-serif; max-width:800px; margin:0 auto; padding:40px 20px; line-height:1.6; }
 h1 { color:#fff; font-size:2em; }
+h2 { color:#fff; margin-top:2em; }
 .badge { display:inline-block; background:#1a1a2e; color:#4ade80; padding:4px 12px; border-radius:4px; font-size:0.85em; margin:4px 4px 4px 0; }
 a { color:#60a5fa; }
 .cta { background:#4ade80; color:#000; padding:12px 24px; border-radius:6px; text-decoration:none; display:inline-block; margin-top:20px; font-weight:bold; }
+table { width:100%; border-collapse:collapse; margin-top:1em; }
+td { padding:8px; border-bottom:1px solid #2a2a3a; font-size:0.9em; }
+code { background:#1a1a2e; padding:2px 6px; border-radius:4px; }
 </style>
 </head>
 <body>
@@ -26,6 +30,24 @@ a { color:#60a5fa; }
 
 <h2>Validated Findings</h2>
 <p>Independently validated by Serial Alice/Sirius GreenTech via confidential-computing hardware: 15 cryptographically signed, blockchain-anchored certificates.</p>
+
+<h2>Live Infrastructure</h2>
+<table>
+<tr><td>Live API Docs</td><td><a href="https://ai-gpu-brain-v3.onrender.com/docs">ai-gpu-brain-v3.onrender.com/docs</a></td></tr>
+<tr><td>Frontend Dashboard</td><td><a href="https://ai-gpu-energy-optimizer.vercel.app">ai-gpu-energy-optimizer.vercel.app</a></td></tr>
+<tr><td>A100 Metrics</td><td><a href="https://ai-gpu-brain-v3.onrender.com/metrics/a100">/metrics/a100</a></td></tr>
+<tr><td>H100 Metrics</td><td><a href="https://ai-gpu-brain-v3.onrender.com/metrics/h100">/metrics/h100</a></td></tr>
+<tr><td>CEI Standard</td><td><a href="https://ai-gpu-brain-v3.onrender.com/standards/cei">/standards/cei</a></td></tr>
+<tr><td>CEI Telemetry</td><td><a href="https://gpu-core-private.onrender.com/telemetry/stats">/telemetry/stats</a></td></tr>
+</table>
+
+<h2>Architecture</h2>
+<p>GPU Agent &rarr; FastAPI Backend &rarr; SQLite/PostgreSQL &rarr; Grafana Dashboard</p>
+
+<h2>60-Second Install</h2>
+<p><code>curl -fsSL https://get.docker.com | sh</code></p>
+<p><code>git clone https://github.com/mikebains41-debug/ai-gpu-energy-optimizer-</code></p>
+<p><code>cd ai-gpu-energy-optimizer- && docker-compose up</code></p>
 
 <a class="cta" href="https://github.com/mikebains41-debug/ai-gpu-energy-optimizer-">View Full Research & Code on GitHub</a>
 
