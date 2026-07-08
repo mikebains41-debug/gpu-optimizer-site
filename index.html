@@ -28,8 +28,33 @@ code { background:#1a1a2e; padding:2px 6px; border-radius:4px; }
 <h2>The Problem</h2>
 <p>Idle SXM/HBM GPUs draw up to 574W of power while reporting 0% utilization, and retain up to 1.6GB of VRAM data after a process exits — invisible to standard monitoring.</p>
 
-<h2>Validated Findings</h2>
-<p>Independently validated by Serial Alice/Sirius GreenTech via confidential-computing hardware: 15 cryptographically signed, blockchain-anchored certificates.</p>
+<h2>Ghost Power by Architecture</h2>
+<table>
+<tr><td>A100 SXM</td><td>65-146W excess</td></tr>
+<tr><td>H100 SXM</td><td>None detected</td></tr>
+<tr><td>H200 SXM</td><td>79-136W excess</td></tr>
+<tr><td>B200 SXM</td><td>Up to 574W spike</td></tr>
+</table>
+
+<h2>VRAM Residual by Architecture (graceful exit)</h2>
+<table>
+<tr><td>A100 SXM</td><td>457-465 MB</td></tr>
+<tr><td>H100 SXM</td><td>457 MB</td></tr>
+<tr><td>H200 SXM</td><td>527-629 MB (1,630 MB full multi-phase, cross-GPU)</td></tr>
+<tr><td>B200 SXM</td><td>628-728 MB</td></tr>
+</table>
+
+<h2>Serial Alice / Sirius GreenTech Independent Validation</h2>
+<p>15 cryptographically signed, blockchain-anchored certificates (Polygon), verified via TDX confidential computing on H200. All overall_valid.</p>
+<table>
+<tr><td>Idle floor</td><td>80.36W</td></tr>
+<tr><td>Ghost cooldown tail</td><td>147.96W</td></tr>
+<tr><td>FP32 CEI</td><td>3.178&times;10&sup1;&sup9; FLOPs/J (&plusmn;1.6% reproducibility)</td></tr>
+<tr><td>FP16 CEI (same-GPU)</td><td>2.846&times;10&sup1;&sup2; FLOPs/J</td></tr>
+<tr><td>FP8 CEI</td><td>9.59&times;10&sup1;&sup9; FLOPs/J at 400.9W (12.69&times; FP32)</td></tr>
+<tr><td>Tenant isolation (SEC-AB/VRAM/KILL)</td><td>0 recoveries, positive control confirmed</td></tr>
+</table>
+<p>Verify any certificate: <a href="https://api.serialalice.pt/v2/certificates">api.serialalice.pt/v2/certificates</a></p>
 
 <h2>Live Infrastructure</h2>
 <table>
